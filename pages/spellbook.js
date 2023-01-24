@@ -1,15 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import { getSpells } from './api/spells';
 
 const { useEffect, useState } = React;
 
-export default function SpellBook() {
-  const [spells, setSpells] = useState([]);
-
-  useEffect(() => {
-    axios.get('/api/spells')
-      .then(response => setSpells(response.data))
-  }, [])
+export default function SpellBook({ spells }) {
 
   return (
     <>
@@ -17,4 +12,13 @@ export default function SpellBook() {
     {spells.map(spell => <h2 key={spell.id}>{spell.name}</h2>)}
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const response = await getSpells();
+  return {
+    props: {
+      spells: response
+    }
+  }
 }

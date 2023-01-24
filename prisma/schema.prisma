@@ -10,4 +10,15 @@ generator client {
 model Spell {
   id String  @default(cuid()) @id
   name String?
+  desc String?
+  higher_level String?
+  range String?
+  material String?
+  ritual Boolean?
+  components String[]
+  duration String?
+  level Int?
+  school String?
+  concentration Boolean?
+  casting_time String?
 }
