@@ -1,0 +1,36 @@
+{
+  "name": "spell_tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zimdarsjon/spell_tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zimdarsjon/spell_tracker/issues"
+  },
+  "homepage": "https://github.com/zimdarsjon/spell_tracker#readme",
+  "dependencies": {
+    "@prisma/client": "^4.9.0",
+    "axios": "^1.2.4",
+    "next": "^13.1.3",
+    "next-auth": "^4.18.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-config-next": "^13.1.4",
+    "prisma": "^4.9.0"
+  }
+}
