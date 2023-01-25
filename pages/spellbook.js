@@ -1,24 +1,42 @@
 import React from 'react';
 import axios from 'axios';
-import { getSpells } from './api/spells';
+import Sidebar from '../components/spellbook/Sidebar.jsx';
+import styles from '../styles/Spells.module.css';
+import Block from '../components/spellbook/Block.jsx';
+import SpellModal from '../components/spellbook/SpellModal.jsx';
 
 const { useEffect, useState } = React;
 
-export default function SpellBook({ spells }) {
+export default function SpellBook() {
+  const [spells, setSpells] = useState([]);
+  const [spell, setSpell] = useState({});
+  const [open, setOpen] = useState(false);
+
+  const openSpell = (spell) => {
+   setOpen(true);
+   setSpell(spell);
+  }
+
+  const closeSpell = () => {
+    setOpen(false);
+  }
+
+  useEffect(() => {
+    async function loadSpells() {
+      const response = await axios.get('/api/spells');
+      const data = response.data;
+      setSpells(data);
+    }
+    loadSpells();
+  }, [])
 
   return (
-    <>
-    <h1>Spell Book</h1>
-    {spells.map(spell => <h2 key={spell.id}>{spell.name}</h2>)}
-    </>
+    <div className='sidebar-page'>
+      <Sidebar setSpells={setSpells} />
+      <div className={styles.spellList}>
+        {spells.map(spell => <Block key={spell.id} spell={spell} openSpell={openSpell}/>)}
+      </div>
+      <SpellModal open={open} spell={spell} closeSpell={closeSpell}/>
+    </div>
   )
-}
-
-export async function getServerSideProps() {
-  const response = await getSpells();
-  return {
-    props: {
-      spells: response
-    }
-  }
 }
