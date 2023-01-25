@@ -14,19 +14,21 @@ export default function Block({ spell, openSpell }) {
     width: '20%',
     maxWidth: '20%',
     minWidth: '20%',
-    border: '1px solid mediumblue',
+    border: '1px solid #27221f',
+    color: '#27221f',
     margin: '10px',
     padding: '5px',
     borderRadius: '10px',
     display: 'flex',
     justifyContent: 'space-between',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor: '#f4f0e8'
   }
 
   return (
     <Box style={blockStyle} onClick={() => openSpell(spell)}>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Typography>{spell.name}{spell.ritual && <AiOutlineHourglass />}</Typography>
+        <Typography><b>{spell.name}</b>{spell.ritual && <AiOutlineHourglass />}</Typography>
         <Typography>
           {spell.school === 'Evocation' && <GiFire />}
           {spell.school === 'Abjuration' && <GiBellShield />}

@@ -9,4 +9,14 @@
 .spellListWrapper {
   width: 82.5%;
   overflow: auto;
+  background-color: #ece5d7;
+}
+
+.spellListWrapper::-webkit-scrollbar {
+  background: #ece5d7;
+}
+
+.spellListWrapper::-webkit-scrollbar-thumb {
+  background: #f4f0e8;
+  border-radius: 10px;
 }

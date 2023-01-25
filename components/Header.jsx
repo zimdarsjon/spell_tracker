@@ -7,7 +7,7 @@ export default function Header() {
   return (
   <>
     <CssBaseline />
-    <AppBar position="static">
+    <AppBar elevation={4} position="relative">
       <Toolbar>
         <h1>D&D Tools</h1>
       </Toolbar>

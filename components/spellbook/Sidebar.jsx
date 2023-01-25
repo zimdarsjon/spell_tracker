@@ -15,7 +15,7 @@ export default function Sidebar({ setSpells }) {
   }
 
   return (
-    <MenuList style={{ width: '17.5%', borderRight: '1px solid black', height: '89vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+    <MenuList style={{ width: '17.5%', borderRight: '1px solid black', height: '89vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', backgroundColor: '#f4f0e8',color: '#27221f', }}>
       <div>
         <MenuItem onClick={() => loadSpells()}>All Spells</MenuItem>
         <Divider />

@@ -19,7 +19,9 @@ export default function SpellModal({ spell, open, closeSpell }) {
     boxShadow: 24,
     p: 4,
     outline: '0',
-    borderRadius: '10px'
+    borderRadius: '10px',
+    backgroundColor: '#f4f0e8',
+    color: '#27221f',
   };
 
   const typoStyle = {
