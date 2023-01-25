@@ -15,21 +15,28 @@ export default function Sidebar({ setSpells }) {
   }
 
   return (
-     <MenuList>
-      <MenuItem  onClick={() => loadSpells()}>All Spells</MenuItem>
-      <Divider />
-      <MenuItem onClick={() => loadSpells(0)}>Cantrips</MenuItem>
-      <MenuItem onClick={() => loadSpells(1)}>Level 1</MenuItem>
-      <MenuItem onClick={() => loadSpells(2)}>Level 2</MenuItem>
-      <MenuItem onClick={() => loadSpells(3)}>Level 3</MenuItem>
-      <MenuItem onClick={() => loadSpells(4)}>Level 4</MenuItem>
-      <MenuItem onClick={() => loadSpells(5)}>Level 5</MenuItem>
-      <MenuItem onClick={() => loadSpells(6)}>Level 6</MenuItem>
-      <MenuItem onClick={() => loadSpells(7)}>Level 7</MenuItem>
-      <MenuItem onClick={() => loadSpells(8)}>Level 8</MenuItem>
-      <MenuItem onClick={() => loadSpells(9)}>Level 9</MenuItem>
-      <Divider />
-      <MenuItem  onClick={() => loadSpells()}>Add Spells</MenuItem>
-     </MenuList>
+    <MenuList style={{ width: '17.5%', borderRight: '1px solid black', height: '89vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+      <div>
+        <MenuItem onClick={() => loadSpells()}>All Spells</MenuItem>
+        <Divider />
+        <MenuItem onClick={() => loadSpells(0)}>Cantrips</MenuItem>
+        <MenuItem onClick={() => loadSpells(1)}>Level 1</MenuItem>
+        <MenuItem onClick={() => loadSpells(2)}>Level 2</MenuItem>
+        <MenuItem onClick={() => loadSpells(3)}>Level 3</MenuItem>
+        <MenuItem onClick={() => loadSpells(4)}>Level 4</MenuItem>
+        <MenuItem onClick={() => loadSpells(5)}>Level 5</MenuItem>
+        <MenuItem onClick={() => loadSpells(6)}>Level 6</MenuItem>
+        <MenuItem onClick={() => loadSpells(7)}>Level 7</MenuItem>
+        <MenuItem onClick={() => loadSpells(8)}>Level 8</MenuItem>
+        <MenuItem onClick={() => loadSpells(9)}>Level 9</MenuItem>
+
+      </div>
+      <div>
+        <Divider />
+        <MenuItem onClick={() => loadSpells()}>Add Spells</MenuItem>
+
+      </div >
+      </MenuList>
+
   )
 }

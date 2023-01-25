@@ -33,10 +33,13 @@ export default function SpellBook() {
   return (
     <div className='sidebar-page'>
       <Sidebar setSpells={setSpells} />
-      <div className={styles.spellList}>
+      <div className={styles.spellListWrapper}>
+        <div className={styles.spellList}>
         {spells.map(spell => <Block key={spell.id} spell={spell} openSpell={openSpell}/>)}
       </div>
       <SpellModal open={open} spell={spell} closeSpell={closeSpell}/>
+      </div>
+
     </div>
   )
 }
